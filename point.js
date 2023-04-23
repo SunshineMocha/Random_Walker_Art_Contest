@@ -11,7 +11,10 @@ class Point{
 
     draw(ctx){
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, 3, 3);
+        // ctx.fillRect(this.x, this.y, 2, 2);
+        ctx.arcTo(this.x, this.y, 5, 8, 5);
+        ctx.strokeStyle = `rgba(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}, 0.2)`
+        ctx.stroke();
     }
 
     changePosition(x,y){
@@ -51,7 +54,7 @@ class Point{
         let g = Math.floor(Math.random()*256);
         let b = Math.floor(Math.random()*256);
 
-        const randomColor = `rgba(${255},${255},${255})`;
+        const randomColor = `rgba(${r},${g},${b})`;
 
         const randomX = Math.random() * canvasWidth;
 
